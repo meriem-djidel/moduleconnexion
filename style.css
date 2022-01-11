@@ -1,0 +1,120 @@
+html {
+	font-family: arial;
+	font-size: 18px;
+	background-image: url(style/venom.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+body {
+	padding: 0;
+	margin: 0;
+}
+button{
+	list-style-type: none;
+	background-color: black;
+	border: 5px;
+	border-radius: 6px;
+	cursor: pointer;
+	padding: 3px;
+	margin: 5px;
+	color: white;
+}
+footer  {
+	color: rgb(255, 255, 255);
+	margin:5px;
+	text-align: center;
+	height:105px;
+	background-color: #07070aaf;
+	float: flex;
+	margin-top: 150px;
+	}
+footer a {
+	color: rgb(255, 255, 255);
+	margin:5px;	
+	}
+.footerIndex{
+	border-radius: 	1000px ;
+	margin: 5%;
+	height:200px;
+	width: auto;
+	background-color: transparent;
+	text-align: center;
+	background-image: url(style/matrix.webp);
+	animation-name: example;
+	animation: mymove 10s infinite;
+	position:relative;
+	
+}
+@keyframes mymove {
+ 0%   {background-image: url(style/matrix.webp);}
+ 50%  {background-image: url(style/dep.jpg); top: 0px;}
+ 80%  {background-image: url(style/tex.png); top: 100px;}
+ 100%  {background-image: url(style/dep.jpg);top:0px;}
+
+  }
+ul{
+	list-style:none;
+}
+ li a{
+	 list-style-type: none;
+	background-color: black;
+	border: 5px;
+	border-radius: 6px;
+	cursor: pointer;
+	padding: 3px;
+	margin: 5px;
+	color: white;
+}
+input {
+	border: 1px solid black;
+	padding: 10px;
+	margin-left: 1px;
+}
+#form {
+	text-align: left;
+	max-width:350px;
+	margin: auto;
+	background-color: #07070a42;
+	color: rgb(255, 255, 255);
+	border-radius: 7px ;
+	padding: 2%;
+	margin-top: 50px;
+}
+h1{ 
+	margin: 10px;
+	text-align: center;
+	color: #020101;
+	text-align: center;
+	font-family: 'crete round',serif;
+	font-size:50px;
+}
+
+
+.btn{
+	background-color: #ffffff;
+	color:rgb(2, 2, 2);
+	border: 2px;
+	border-radius:5px;
+	cursor: pointer;
+	padding: 5px;
+	margin: 8px;	
+}
+
+#admin {
+	text-align:center;
+	max-width:350px;
+	margin: auto;
+	background-color: rgb(255, 255, 255);
+	color: rgb(0, 0, 0);
+	border-radius: 3px ;
+	padding: 1%;
+	margin-top: 30px;
+	margin: auto;
+}
+.titre{
+width: 80%;	
+color: #00ff2a;
+text-align: center;
+font-family: 'crete round',serif;
+font-size:70px;
+}
