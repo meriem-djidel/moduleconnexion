@@ -17,6 +17,3 @@ include('connect.php');
     <a href="mailto:meriem.djidel@laplateforme.io">Contact information:meriem.djidel@laplateforme.io</a>
     <h6>Posted by: Meriem Djidel 2021</h6>
 </footer>
-</body>
-
-</html>
