@@ -35,6 +35,27 @@ if (isset($_POST["Submit"])) {
 </head>
 
 <body>
+    <header>
+        <?php
+        if (isset($_SESSION['login']) && $_SESSION['admin'] == TRUE) {
+            echo "      
+                <ul>
+                    <button><li><a href='deconnexion.php'>Se déconnecter</a></li></button>
+                    <button><li><a href='profil.php'>Profil</a></li></button>
+                    <button><li><a href='admin.php'>Admin</a></li></button>
+                </ul>
+       ";
+        }
+        if (isset($_SESSION['admin']) != TRUE) {
+            echo " 
+                <ul>
+                    <button><li><a href='index.php'>Accueil</a></li></button>
+                    <button><li><a href='connexion.php'>Connexion</a></li></button>
+                </ul>";
+        }
+        ?>
+
+    </header>
     <h1>Inscription</h1>
     <div id="form">
         <form method="post">
