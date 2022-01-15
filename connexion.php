@@ -9,6 +9,7 @@ if (isset($_POST['login']) && isset($_POST["password"])) {
   $query = mysqli_query($sql, $requete); // excute une requête sur la base de données par rapport à la variable "query";
   $resultat = mysqli_fetch_all($query);
   if (count($resultat) == 1) {
+    $_SESSION['admin'] = TRUE;
     $_SESSION['login'] = $login;
     header('location:index.php');
   } elseif (isset($resultat['login']) != $login && isset($resultat['password']) != $password) {
@@ -27,8 +28,28 @@ if (isset($_POST['login']) && isset($_POST["password"])) {
 
 <body>
   <header>
-    <h1>Connexion</h1>
+    <?php
+    if (isset($_SESSION['login']) && $_SESSION['admin'] == TRUE) {
+      echo "   Vous êtes connecter " . $_SESSION['login'];
+      echo "   
+                <ul>
+                    <button><li><a href='deconnexion.php'>Se déconnecter</a></li></button>
+                    <button><li><a href='profil.php'>Profil</a></li></button>
+                    <button><li><a href='admin.php'>Admin</a></li></button>
+                </ul>
+       ";
+    }
+    if (isset($_SESSION['admin']) != TRUE) {
+      echo " 
+                <ul>
+                    <button><li><a href='inscription.php'>Inscription</a></li></button>
+                    <button><li><a href='index.php'>Accueil</a></li></button>
+                </ul>";
+    }
+    ?>
+
   </header>
+  <h1>Connexion</h1>
   <div id="form">
     <form method="post">
       <table class="tab">
