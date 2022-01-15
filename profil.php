@@ -14,7 +14,7 @@ if (isset($_POST['Submit'])) {
     $nom3 = $_POST['nom'];
     $prenom3  = $_POST['prenom'];
     $password3  = $_POST['password'];
-    if ($login3 != 'admin'){
+    if ($login3 != 'admin') {
         $requete = mysqli_query($sql, "UPDATE utilisateurs SET login='$login3', nom='$nom3',prenom='$prenom3',password='$password3' WHERE login='$sessionlogin'");
         $_SESSION['login'] = $login3;
         header('location:index.php');
@@ -34,10 +34,30 @@ if (isset($_POST['Submit'])) {
 
 <body>
     <header>
-        <ul>
-            <li><a href="index.php">Accueil</a></li>
-            <li><a href="deconnexion.php">Déconnection</a></li>
-        </ul>
+
+        <?php
+        if (isset($_SESSION['login']) && $_SESSION['admin'] == TRUE) {
+            echo "      
+                <ul> 
+                <button><li><a href='index.php'>Accueil</a></li></button>
+
+                    <button><li><a href='admin.php'>Admin</a></li></button>
+                    <button><li><a href='deconnexion.php'>Se déconnecter</a></li></button>
+                   
+                </ul>
+       ";
+        }
+        if (isset($_SESSION['admin']) != TRUE) {
+            echo " 
+                <ul>
+                <button><li><a href='index.php'>Acceuil</a></li></button>
+
+                    <button><li><a href='inscription.php'>Inscription</a></li></button>
+                    <button><li><a href='connexion.php'>Connexion</a></li></button>
+                </ul>";
+        }
+        ?>
+    </header>
     </header>
     <h1>Profil</h1>
     <div id="form">
